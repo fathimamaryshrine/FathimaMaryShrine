@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Our Lady Of Fathima Shrine"
+version = "1.0.0"
+id = "artifacts/shrine-website"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24527
+
+[services.development]
+run = "pnpm --filter @workspace/shrine-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/shrine-website", "run", "build" ]
+publicDir = "artifacts/shrine-website/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24527"
+BASE_PATH = "/"
