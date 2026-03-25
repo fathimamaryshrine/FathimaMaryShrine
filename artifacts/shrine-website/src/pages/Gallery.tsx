@@ -10,36 +10,36 @@ interface GalleryProps {
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1548625149-720554986036?w=800&q=80",
+    src: "/images/hero.jpeg",
+    alt: "Shrine view",
+  },
+  {
+    src: "/images/church-exterior.jpeg",
     alt: "Church exterior",
   },
   {
-    src: "https://images.unsplash.com/photo-1591538899718-b15ec44ea5de?w=800&q=80",
-    alt: "Church interior",
+    src: "/images/church-entrance.jpeg",
+    alt: "Church entrance",
   },
   {
-    src: "https://images.unsplash.com/photo-1514897575457-c4db467cf78e?w=800&q=80",
-    alt: "Church gathering",
+    src: "/images/gathering.jpeg",
+    alt: "Community gathering",
   },
   {
-    src: "https://images.unsplash.com/photo-1548625361-58a9d19a27f7?w=800&q=80",
-    alt: "Holy Mass",
+    src: "/images/pastor-residence.jpeg",
+    alt: "Pastor's residence",
   },
   {
-    src: "https://images.unsplash.com/photo-1558018374-ee5ee7aca620?w=800&q=80",
-    alt: "Prayer service",
+    src: "/images/gallery-1.jpeg",
+    alt: "Gallery photo 1",
   },
   {
-    src: "https://images.unsplash.com/photo-1579722820903-7e1b4c9df1d1?w=800&q=80",
-    alt: "Church candles",
+    src: "/images/gallery-2.jpeg",
+    alt: "Gallery photo 2",
   },
   {
-    src: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=800&q=80",
-    alt: "Shrine architecture",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1533561052604-c3beb6d55b8d?w=800&q=80",
-    alt: "Devotional gathering",
+    src: "/images/gallery-3.jpeg",
+    alt: "Gallery photo 3",
   },
 ];
 
@@ -79,8 +79,7 @@ export function Gallery({ lang }: GalleryProps) {
       <section
         className="relative h-56 sm:h-72 flex items-center justify-center text-white"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=1200&q=80')",
+          backgroundImage: "url('/images/church-exterior.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -114,39 +113,6 @@ export function Gallery({ lang }: GalleryProps) {
         </div>
       </section>
 
-      {/* Video Section */}
-      <section className="py-16 bg-blue-950">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="fade-in">
-            <h2 className="font-serif text-3xl font-bold text-white mb-2">
-              {t(lang, "gallery.videoTitle")}
-            </h2>
-            <p className="text-blue-300 text-sm mb-8">{t(lang, "gallery.videoSubtitle")}</p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {/* YouTube embed placeholders */}
-            <div className="fade-in aspect-video rounded-xl overflow-hidden shadow-lg">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/videoseries?list=PLjjL_x2Pds0pW_8E6HdRUCiM4hEJstyj_"
-                title="Shrine Celebrations"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-            <div className="fade-in aspect-video rounded-xl overflow-hidden shadow-lg" style={{ transitionDelay: "0.1s" }}>
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/videoseries?list=PLjjL_x2Pds0pW_8E6HdRUCiM4hEJstyj_"
-                title="Shrine Events"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Lightbox */}
       <div
         className={`lightbox ${lightboxIdx !== null ? "open" : ""}`}
@@ -176,7 +142,7 @@ export function Gallery({ lang }: GalleryProps) {
         </button>
         {lightboxIdx !== null && (
           <img
-            src={images[lightboxIdx].src.replace("w=800", "w=1200")}
+            src={images[lightboxIdx].src}
             alt={images[lightboxIdx].alt}
             onClick={(e) => e.stopPropagation()}
           />

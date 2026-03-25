@@ -40,7 +40,7 @@ export function About({ lang }: AboutProps) {
         className="relative h-60 sm:h-72 flex items-center justify-center text-white"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1548625149-720554986036?w=1200&q=80')",
+            "url('/images/church-exterior.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center 30%",
         }}
@@ -73,12 +73,12 @@ export function About({ lang }: AboutProps) {
             </div>
             <div className="fade-in" style={{ transitionDelay: "0.15s" }}>
               <img
-                src="https://images.unsplash.com/photo-1591538899718-b15ec44ea5de?w=800&q=80"
-                alt="Church interior"
+                src="/images/church-entrance.jpeg"
+                alt="Church entrance"
                 className="rounded-xl shadow-md w-full h-72 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1514897575457-c4db467cf78e?w=800&q=80"
+                src="/images/gathering.jpeg"
                 alt="Church gathering"
                 className="rounded-xl shadow-md w-full h-52 object-cover mt-4"
               />

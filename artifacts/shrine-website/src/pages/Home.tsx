@@ -54,7 +54,7 @@ export function Home({ lang }: HomeProps) {
         className="relative min-h-screen flex items-center justify-center text-white"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1548625149-720554986036?w=1600&q=80')",
+            "url('/images/hero.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
