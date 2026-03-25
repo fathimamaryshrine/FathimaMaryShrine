@@ -143,34 +143,32 @@ export function Home({ lang }: HomeProps) {
               {t(lang, "holyweek.title")}
             </h2>
           </div>
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden fade-in">
+          <div className="space-y-4 fade-in">
             {holyWeekData.map((item, i) => (
               <div
                 key={i}
-                className="holy-week-item px-6"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center hover:shadow-md transition-shadow duration-300"
               >
-                <div className="flex flex-wrap gap-2 items-start py-1">
-                  <span className="shrine-gold font-bold text-sm font-mono min-w-[60px]">{item.date}</span>
-                  <div className="flex-1">
-                    <span className="font-serif font-semibold text-gray-800 text-base">
-                      {t(lang, item.dayKey)}
-                    </span>
-                    {item.time && (
-                      <span className="ml-2 text-sm text-blue-600 font-medium">{item.time}</span>
-                    )}
-                    {item.events && (
-                      <div className="mt-2 space-y-1">
-                        {item.events.map((ev, j) => (
-                          <div key={j} className="flex items-center gap-2 text-sm text-gray-600">
-                            <span className="text-yellow-500">•</span>
-                            <span>{t(lang, ev.key)}</span>
-                            <span className="text-blue-500 font-medium">{ev.time}</span>
-                          </div>
-                        ))}
+                <span className="inline-block shrine-gold font-bold text-xs font-mono tracking-wider bg-yellow-50 px-3 py-1 rounded-full mb-3">
+                  {item.date}
+                </span>
+                <h3 className="font-serif font-semibold text-gray-800 text-xl mb-1">
+                  {t(lang, item.dayKey)}
+                </h3>
+                {item.time && (
+                  <p className="text-blue-600 font-medium text-base">{item.time}</p>
+                )}
+                {item.events && (
+                  <div className="mt-3 space-y-2">
+                    {item.events.map((ev, j) => (
+                      <div key={j} className="flex items-center justify-center gap-2 text-sm text-gray-600">
+                        <span className="text-yellow-500">✦</span>
+                        <span>{t(lang, ev.key)}</span>
+                        <span className="text-blue-500 font-medium">{ev.time}</span>
                       </div>
-                    )}
+                    ))}
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
