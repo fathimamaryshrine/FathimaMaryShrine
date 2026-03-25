@@ -54,7 +54,7 @@ export function Home({ lang }: HomeProps) {
         className="relative min-h-screen flex items-center justify-center text-white"
         style={{
           backgroundImage:
-            "url('/images/hero.jpeg')",
+            `url('${import.meta.env.BASE_URL}images/hero.jpeg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

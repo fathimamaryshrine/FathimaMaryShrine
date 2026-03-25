@@ -40,7 +40,7 @@ export function About({ lang }: AboutProps) {
         className="relative h-60 sm:h-72 flex items-center justify-center text-white"
         style={{
           backgroundImage:
-            "url('/images/church-exterior.jpeg')",
+            `url('${import.meta.env.BASE_URL}images/church-exterior.jpeg')`,
           backgroundSize: "cover",
           backgroundPosition: "center 30%",
         }}
@@ -73,12 +73,12 @@ export function About({ lang }: AboutProps) {
             </div>
             <div className="fade-in" style={{ transitionDelay: "0.15s" }}>
               <img
-                src="/images/church-entrance.jpeg"
+                src={`${import.meta.env.BASE_URL}images/church-entrance.jpeg`}
                 alt="Church entrance"
                 className="rounded-xl shadow-md w-full h-72 object-cover"
               />
               <img
-                src="/images/gathering.jpeg"
+                src={`${import.meta.env.BASE_URL}images/gathering.jpeg`}
                 alt="Church gathering"
                 className="rounded-xl shadow-md w-full h-52 object-cover mt-4"
               />

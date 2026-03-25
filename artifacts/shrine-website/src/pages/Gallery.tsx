@@ -8,37 +8,39 @@ interface GalleryProps {
   lang: Language;
 }
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const images = [
   {
-    src: "/images/hero.jpeg",
+    src: `${baseUrl}images/hero.jpeg`,
     alt: "Shrine view",
   },
   {
-    src: "/images/church-exterior.jpeg",
+    src: `${baseUrl}images/church-exterior.jpeg`,
     alt: "Church exterior",
   },
   {
-    src: "/images/church-entrance.jpeg",
+    src: `${baseUrl}images/church-entrance.jpeg`,
     alt: "Church entrance",
   },
   {
-    src: "/images/gathering.jpeg",
+    src: `${baseUrl}images/gathering.jpeg`,
     alt: "Community gathering",
   },
   {
-    src: "/images/pastor-residence.jpeg",
+    src: `${baseUrl}images/pastor-residence.jpeg`,
     alt: "Pastor's residence",
   },
   {
-    src: "/images/gallery-1.jpeg",
+    src: `${baseUrl}images/gallery-1.jpeg`,
     alt: "Gallery photo 1",
   },
   {
-    src: "/images/gallery-2.jpeg",
+    src: `${baseUrl}images/gallery-2.jpeg`,
     alt: "Gallery photo 2",
   },
   {
-    src: "/images/gallery-3.jpeg",
+    src: `${baseUrl}images/gallery-3.jpeg`,
     alt: "Gallery photo 3",
   },
 ];
@@ -79,7 +81,7 @@ export function Gallery({ lang }: GalleryProps) {
       <section
         className="relative h-56 sm:h-72 flex items-center justify-center text-white"
         style={{
-          backgroundImage: "url('/images/church-exterior.jpeg')",
+          backgroundImage: `url('${baseUrl}images/church-exterior.jpeg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
